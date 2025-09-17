@@ -21,6 +21,12 @@ CREATE POLICY "Allow authenticated users to view all" ON public.waitlist
   TO authenticated
   USING (true);
 
+-- Allow anonymous users to count waitlist entries (for social proof)
+CREATE POLICY "Allow anonymous count" ON public.waitlist
+  FOR SELECT
+  TO anon
+  USING (true);
+
 -- Allow authenticated users to delete entries (for admin cleanup if needed)
 CREATE POLICY "Allow authenticated users to delete" ON public.waitlist
   FOR DELETE
