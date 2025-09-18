@@ -217,207 +217,77 @@ export function WaitlistPage() {
           </div>
         </div>
 
-        {/* Features Section */}
+
+        {/* How It Works Section */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold text-center mb-16 text-[var(--color-textPrimary)]">
-            What <span className="text-[var(--color-primary)]">Plamaco</span>{" "}
-            Does
-          </h3>
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-bold mb-4 text-[var(--color-textPrimary)]">
+              How <span className="text-[var(--color-primary)]">Plamaco</span> Works
+            </h3>
+            <p className="text-lg text-[var(--color-textSecondary)] max-w-2xl mx-auto">
+              Simple steps to transform your kitchen and reduce food waste
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-[var(--color-primary)]/10">
-                <svg
-                  className="w-8 h-8 text-[var(--color-primary)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                  />
+            {/* Step 1 */}
+            <div className="relative bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="w-8 h-8 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  1
+                </div>
+              </div>
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-[var(--color-primary)]/10">
+                <svg className="w-8 h-8 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
               </div>
-              <h4 className="text-xl font-semibold mb-3 text-[var(--color-textPrimary)]">
+              <h4 className="text-xl font-bold mb-3 text-[var(--color-textPrimary)]">
                 Track Your Pantry
               </h4>
               <p className="text-[var(--color-textSecondary)]">
-                Easily manage what you have at home with smart inventory
-                tracking
+                Easily scan and organize your ingredients with smart inventory tracking
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-[var(--color-primary)]/10">
-                <svg
-                  className="w-8 h-8 text-[var(--color-primary)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  />
+            {/* Step 2 */}
+            <div className="relative bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="w-8 h-8 bg-[var(--color-secondary)] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  2
+                </div>
+              </div>
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-[var(--color-secondary)]/10">
+                <svg className="w-8 h-8 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h4 className="text-xl font-semibold mb-3 text-[var(--color-textPrimary)]">
+              <h4 className="text-xl font-bold mb-3 text-[var(--color-textPrimary)]">
                 Discover Recipes
               </h4>
               <p className="text-[var(--color-textSecondary)]">
-                Get personalized recipe suggestions based on what you already
-                have
+                Get personalized recipe suggestions based on what you already have
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-[var(--color-primary)]/10">
-                <svg
-                  className="w-8 h-8 text-[var(--color-primary)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  />
+            {/* Step 3 */}
+            <div className="relative bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="w-8 h-8 bg-[var(--color-accent)] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  3
+                </div>
+              </div>
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-[var(--color-accent)]/10">
+                <svg className="w-8 h-8 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h4 className="text-xl font-semibold mb-3 text-[var(--color-textPrimary)]">
+              <h4 className="text-xl font-bold mb-3 text-[var(--color-textPrimary)]">
                 Reduce Food Waste
               </h4>
               <p className="text-[var(--color-textSecondary)]">
-                Make the most of your ingredients and help the environment
+                Save money and help the environment by using ingredients efficiently
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Healthy Living Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div>
-            <h4 className="text-3xl font-bold mb-4 text-[var(--color-textPrimary)]">
-              Promote Healthy Living
-            </h4>
-            <p className="text-lg text-[var(--color-textSecondary)] mb-6">
-              Make informed decisions about your meals with nutritional insights
-              and balanced recipe suggestions. Plamaco helps you maintain a
-              healthy lifestyle while making the most of your ingredients.
-            </p>
-            <ul className="space-y-3 text-[var(--color-textSecondary)]">
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-secondary)] rounded-full"></div>
-                Nutritional information for every recipe
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-secondary)] rounded-full"></div>
-                Balanced meal planning suggestions
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-secondary)] rounded-full"></div>
-                Dietary preference customization
-              </li>
-            </ul>
-          </div>
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-[28rem] h-[28rem]">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-secondary)]/15 to-[var(--color-accent)]/10 blob-2 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src="/images/breakfast.png"
-                    alt="Healthy living illustration"
-                    className="w-80 h-80 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Smart Kitchen Organization Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative w-80 h-80">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/15 to-[var(--color-secondary)]/10 blob-3 overflow-hidden">
-                <img
-                  src="/images/kitchen.png"
-                  alt="Kitchen organization illustration"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-          <div>
-            <h4 className="text-3xl font-bold mb-4 text-[var(--color-textPrimary)]">
-              Organize Your Kitchen
-            </h4>
-            <p className="text-lg text-[var(--color-textSecondary)] mb-6">
-              Transform your kitchen into an efficient cooking space. Plan your
-              meals ahead, organize your ingredients strategically, and never
-              run out of essentials again.
-            </p>
-            <ul className="space-y-3 text-[var(--color-textSecondary)]">
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-accent)] rounded-full"></div>
-                Weekly meal planning tools
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-accent)] rounded-full"></div>
-                Smart shopping list generation
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-accent)] rounded-full"></div>
-                Kitchen storage optimization tips
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Smart Inventory Management */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div>
-            <h4 className="text-3xl font-bold mb-4 text-[var(--color-textPrimary)]">
-              Smart Inventory Management
-            </h4>
-            <p className="text-lg text-[var(--color-textSecondary)] mb-6">
-              Keep track of your ingredients, their expiration dates, and
-              quantities. Get notifications when items are running low or about
-              to expire.
-            </p>
-            <ul className="space-y-3 text-[var(--color-textSecondary)]">
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-primary)] rounded-full"></div>
-                Barcode scanning for easy entry
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-primary)] rounded-full"></div>
-                Expiration date tracking
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[var(--color-primary)] rounded-full"></div>
-                Smart notifications
-              </li>
-            </ul>
-          </div>
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-[28rem] h-[28rem]">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/15 to-[var(--color-primary)]/10 blob-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src="/images/groceries.svg"
-                    alt="Groceries illustration"
-                    className="w-80 h-80 object-cover"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
