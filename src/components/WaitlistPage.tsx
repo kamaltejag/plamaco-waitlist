@@ -117,34 +117,43 @@ export function WaitlistPage() {
 
   return (
     <div className="min-h-screen bg-[var(--color-primaryBg)]">
-      <header className="border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <h1 className="text-2xl font-bold text-[var(--color-primary)]">
-            Plamaco
-          </h1>
-        </div>
-      </header>
-
       <main className="max-w-6xl mx-auto px-6">
         {/* Hero Section */}
-        <div className="min-h-screen flex items-center">
-          <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-12">
-          <div>
-            <h2 className="text-5xl font-bold mb-6 text-[var(--color-secondary)] leading-tight">
+        <div className="h-screen flex items-center justify-center relative">
+          {/* Center Blob Background */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div
+              className="blob-dynamic"
+              style={{
+                width: "800px",
+                height: "700px",
+                backgroundColor: "#87A96B08",
+                backgroundImage:
+                  "linear-gradient(135deg, #87A96B06 0%, #87A96B12 100%)",
+              }}
+            ></div>
+          </div>
+
+          {/* Centered Content */}
+          <div className="text-center max-w-2xl mx-auto z-10 px-6 relative">
+            <h1 className="text-3xl font-bold text-[var(--color-primary)] mb-8">
+              Plamaco
+            </h1>
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-[var(--color-secondary)] leading-tight">
               Never wonder what to cook again
             </h2>
-            <p className="text-xl mb-8 text-[var(--color-textSecondary)] leading-relaxed">
+            <p className="text-xl mb-8 text-[var(--color-textSecondary)] leading-relaxed max-w-lg mx-auto">
               Plamaco helps you decide what to cook with your available pantry
               ingredients while reducing food waste.
             </p>
 
-            {/* Inline Waitlist Form */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 mb-8">
+            {/* Waitlist Form */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 max-w-md mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-[var(--color-textPrimary)]">
                 Join the Waitlist
               </h3>
               <p className="text-[var(--color-textSecondary)] mb-6">
-                Be the first to know when we launch and get early access.
+                Be the first to know when we launch.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -205,20 +214,27 @@ export function WaitlistPage() {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-[28rem] h-[28rem]">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/15 to-[var(--color-secondary)]/10 blob-1 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src="/images/cooking.svg"
-                    alt="Cooking illustration"
-                    className="w-80 h-80 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          {/* Scroll indicator - Positioned relative to viewport */}
+          <button
+            onClick={() =>
+              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+            }
+            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-30 hover:opacity-70 transition-opacity cursor-pointer"
+          >
+            <svg
+              className="w-6 h-6 text-[var(--color-textSecondary)]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </button>
         </div>
 
         {/* How It Works Section */}
@@ -339,64 +355,119 @@ export function WaitlistPage() {
               {[
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                      />
                     </svg>
                   ),
                   iconColor: "#87A96B",
                   borderColor: "#87A96B",
                   bgColor: "#87A96B08",
                   question: "How does Plamaco help reduce food waste?",
-                  answer: "Plamaco tracks your pantry items and suggests recipes based on ingredients that are about to expire, helping you use everything before it goes bad."
+                  answer:
+                    "Plamaco tracks your pantry items and suggests recipes based on ingredients that are about to expire, helping you use everything before it goes bad.",
                 },
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                      />
                     </svg>
                   ),
                   iconColor: "#87A96B",
                   borderColor: "#87A96B",
                   bgColor: "#87A96B08",
                   question: "Will there be a mobile app?",
-                  answer: "Yes! We're launching with both web and mobile apps (iOS and Android) so you can manage your kitchen from anywhere."
+                  answer:
+                    "Yes! We're launching with both web and mobile apps (iOS and Android) so you can manage your kitchen from anywhere.",
                 },
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                      />
                     </svg>
                   ),
                   iconColor: "#87A96B",
                   borderColor: "#87A96B",
                   bgColor: "#87A96B08",
                   question: "How does Plamaco suggest recipes?",
-                  answer: "Plamaco analyzes your available pantry ingredients and suggests personalized recipes that help you make the most of what you already have."
+                  answer:
+                    "Plamaco analyzes your available pantry ingredients and suggests personalized recipes that help you make the most of what you already have.",
                 },
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11a7.5 7.5 0 11-5.44 0M12 12h.01M12 17h.01M12 21v-1m8.2-9l-.7-.7M3.8 8l-.7.7m17.4 9.9l-.7-.7M4.9 19.1l-.7-.7" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4v1m6 11a7.5 7.5 0 11-5.44 0M12 12h.01M12 17h.01M12 21v-1m8.2-9l-.7-.7M3.8 8l-.7.7m17.4 9.9l-.7-.7M4.9 19.1l-.7-.7"
+                      />
                     </svg>
                   ),
                   iconColor: "#87A96B",
                   borderColor: "#87A96B",
                   bgColor: "#87A96B08",
                   question: "How do I add items to my pantry?",
-                  answer: "Plamaco supports barcode scanning for quick item entry and receipt/bill scanning to bulk add multiple ingredients from your grocery shopping trips."
+                  answer:
+                    "Plamaco supports barcode scanning for quick item entry and receipt/bill scanning to bulk add multiple ingredients from your grocery shopping trips.",
                 },
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
                     </svg>
                   ),
                   iconColor: "#87A96B",
                   borderColor: "#87A96B",
                   bgColor: "#87A96B08",
                   question: "Can I track expiration dates?",
-                  answer: "Yes! Plamaco automatically tracks expiration dates, sends notifications a few days before items expire, and prioritizes recipe suggestions using ingredients that are close to expiring."
-                }
+                  answer:
+                    "Yes! Plamaco automatically tracks expiration dates, sends notifications a few days before items expire, and prioritizes recipe suggestions using ingredients that are close to expiring.",
+                },
               ].map((faq, index) => (
                 <div
                   key={index}
@@ -406,7 +477,7 @@ export function WaitlistPage() {
                     borderLeftColor: faq.borderColor,
                     borderTopColor: "#E5E7EB",
                     borderRightColor: "#E5E7EB",
-                    borderBottomColor: "#E5E7EB"
+                    borderBottomColor: "#E5E7EB",
                   }}
                 >
                   <button
@@ -419,7 +490,7 @@ export function WaitlistPage() {
                           className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                           style={{
                             backgroundColor: `${faq.iconColor}20`,
-                            color: faq.iconColor
+                            color: faq.iconColor,
                           }}
                         >
                           {faq.icon}
@@ -430,13 +501,18 @@ export function WaitlistPage() {
                       </div>
                       <svg
                         className={`w-5 h-5 text-gray-400 transition-transform ${
-                          openFaq === index ? 'rotate-180' : ''
+                          openFaq === index ? "rotate-180" : ""
                         }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
                       </svg>
                     </div>
                   </button>

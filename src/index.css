@@ -24,15 +24,15 @@
     --radius: 0.5rem;
 
     /* Custom Plamaco colors */
-    --color-primary: #87A96B;  /* Sage Green */
-    --color-secondary: #D2691E; /* Terracotta */
-    --color-accent: #4A90B8;   /* Soft Blue */
-    --color-primaryBg: #FAF7F0; /* Cream */
-    --color-secondaryBg: #FFFFFF; /* White */
-    --color-border: #E5E7EB;
-    --color-muted: #6B7280;
-    --color-textPrimary: #1F2937;
-    --color-textSecondary: #6B7280;
+    --color-primary: #87a96b; /* Sage Green */
+    --color-secondary: #d2691e; /* Terracotta */
+    --color-accent: #4a90b8; /* Soft Blue */
+    --color-primaryBg: #faf7f0; /* Cream */
+    --color-secondaryBg: #ffffff; /* White */
+    --color-border: #e5e7eb;
+    --color-muted: #6b7280;
+    --color-textPrimary: #1f2937;
+    --color-textSecondary: #6b7280;
 
     --font-sans: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
@@ -100,5 +100,53 @@
   .blob-4 {
     border-radius: 50% 50% 30% 70% / 30% 30% 70% 70%;
   }
-}
 
+  /* Dynamic animated blob */
+  .blob-dynamic {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: blob-morph 8s ease-in-out infinite;
+  }
+
+  .blob-small-1 {
+    border-radius: 70% 30% 50% 50% / 40% 60% 40% 60%;
+    animation: blob-morph-small-1 12s ease-in-out infinite;
+  }
+
+  .blob-small-2 {
+    border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%;
+    animation: blob-morph-small-2 15s ease-in-out infinite;
+  }
+
+  .blob-small-3 {
+    border-radius: 50% 50% 40% 60% / 30% 70% 60% 40%;
+    animation: blob-morph-small-3 10s ease-in-out infinite;
+  }
+
+  .blob-small-4 {
+    border-radius: 60% 40% 70% 30% / 50% 50% 30% 70%;
+    animation: blob-morph-small-4 14s ease-in-out infinite;
+  }
+
+  .blob-small-5 {
+    border-radius: 30% 70% 60% 40% / 70% 30% 40% 60%;
+    animation: blob-morph-small-5 11s ease-in-out infinite;
+  }
+
+  @keyframes blob-morph {
+    0% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    50% {
+      border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+    }
+    75% {
+      border-radius: 50% 50% 30% 70% / 30% 30% 70% 70%;
+    }
+    100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+  }
+}
